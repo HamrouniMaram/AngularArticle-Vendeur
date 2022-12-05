@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Article :</h2>
+    </div>
+    <form>
+        <div  class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Article</label>
+            <input readinly type="text" [(ngModel)]="currentArticle.idArticle" name="idArticle" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Article</label>
+            <input type="text" [(ngModel)]="currentArticle.nomArticle" name="nomArticle" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prix Article</label>
+            <input type="number" [(ngModel)]="currentArticle.prixArticle" name="prixArticle" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [ngModel]="currentArticle.dateCreation | date: 'yyyy-MM-dd'" 
+            (ngModelChange)=" currentArticle.dateCreation= $event" name="dateCreation"  class="form-control">
+        </div>
+         <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Vendeur</label>
+            <select class="form-control form-control-lg" id="idVen" name="idVen"
+            [(ngModel)]="updatedVenId">
+            <option *ngFor="let ven of vendeurs" [value]="ven.idVen" >
+            {{ven.nomVen}}
+            </option>
+            </select>
+            </div> 
+        <div class="mt-2">
+            <button type="submit" (click)="updateArticle()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>

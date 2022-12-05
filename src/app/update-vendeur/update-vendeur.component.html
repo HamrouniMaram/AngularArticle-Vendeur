@@ -1,0 +1,15 @@
+<form>
+    <div [hidden]="ajout">
+    <label>ID Vendeur</label>
+    <input type="text" [(ngModel)]="vendeur.idVen" name="idVendeur" class="form-control w-25">
+    </div>
+    <div>
+    <label>Nom Vendeur</label>
+    <input type="text" [(ngModel)]="vendeur.nomVen" name="nomVendeur" class="form-control"
+    placeholder="Entrez un nom de vendeur...">
+    </div>
+    <div class="mt-2">
+     <button type="submit" [disabled]="!vendeur.nomVen" class="btn btn-success" (click)="saveVendeur()" >{{ajout ? 'Ajouter' : 'Modifier'}} </button>
+    </div>
+    </form>
+    

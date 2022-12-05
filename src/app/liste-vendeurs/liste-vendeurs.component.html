@@ -1,0 +1,26 @@
+<!-- <p>liste-vendeurs works!</p> -->
+<div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+<app-update-vendeur [vendeur]="updatedVen"
+(vendeurUpdated)= "vendeurUpdated($event)"   
+[ajout]="ajout"></app-update-vendeur>
+</div>
+
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom Vendeur</th> </tr>
+    </thead>
+    <tbody *ngFor="let Ven of vendeurs">
+    <tr>
+    <td>{{Ven.idVen}}</td>
+    <td>{{Ven.nomVen}}</td>
+    <td><a class="btn btn-success" (click)="updateVen(Ven)">Editer</a></td>
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
